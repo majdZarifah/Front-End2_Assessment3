@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Majd Portfolio</title>
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+
+.container {
+    width: 85%;
+    margin: auto;
+    padding: 40px 0;
+}
+
+
+header {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    text-align: center;
+    padding: 60px 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #38bdf8;
+}
+
+header p {
+    color: #94a3b8;
+}
+
+
+nav {
+    background: #020617;
+    border-bottom: 1px solid #1e293b;
+}
+
+nav .container {
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: #e2e8f0;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+
+h2 {
+    margin-bottom: 20px;
+    color: #38bdf8;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(56,189,248,0.3);
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    background: #38bdf8;
+    color: #0f172a;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0ea5e9;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+    color: #94a3b8;
+}
+
+
+@media(max-width: 768px){
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+
+#skills .card {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 25px;
+}
+
+.skill {
+    margin-bottom: 15px;
+}
+
+.bar {
+    background: #1e293b;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bar span {
+    display: block;
+    height: 10px;
+    background: #38bdf8;
+}
+
+#topBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+}
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Majd Zarifah</h1>
+        <p>Cyber Security Student</p>
+    </div>
+</header>
+
+<nav>
+    <div class="container">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<section id="about" class="container">
+    <h2>About Me</h2>
+    <p>
+        I am a Computer Science student specializing in Cyber Security.
+        Passionate about secure systems and modern web development.
+    </p>
+</section>
+
+<section id="skills" class="container">
+    <h2>Skills & Experience</h2>
+
+    <div class="grid">
+        <div class="card">Flutter Development</div>
+        <div class="card">Linux Systems</div>
+        <div class="card">CCNA Networking</div>
+        <div class="card">Frontend Development</div>
+    </div>
+</section>
+
+<section id="projects" class="container">
+    <h2>Projects</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Restaurant App</h3>
+            <p>Mobile app built using Flutter.</p>
+        </div>
+
+        <div class="card">
+            <h3>Cinema Ticket Booking</h3>
+            <p>Website to book movie tickets with seat selection.</p>
+        </div>
+
+        <div class="card">
+            <h3>Security Tool</h3>
+            <p>Basic cybersecurity scripts and tools.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="container">
+    <h2>Contact</h2>
+    <button onclick="showEmail()">Show Email</button>
+    <p id="email"></p>
+</section>
+
+<button id="topBtn" onclick="scrollTopPage()">↑</button>
+
+<footer>
+    <p>© 2026 Majd | All Rights Reserved</p>
+</footer>
+
+<script>
+    function showEmail() {
+    document.getElementById("email").innerHTML = "majd@email.com";
+}
+
+const btn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+    btn.style.display = window.scrollY > 300 ? "block" : "none";
+});
+
+function scrollTopPage() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+</body>
+</html>
